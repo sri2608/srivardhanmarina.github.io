@@ -6,7 +6,7 @@
 <title>Srivardhan Marina — QA Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -24,8 +24,8 @@
     --border2: rgba(157,128,255,0.15);
     --glass: rgba(15,15,26,0.65);
     --card: rgba(255,255,255,0.02);
-    --font-head: 'Syne', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-head: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
     --radius: 20px;
     --radius-sm: 12px;
   }
@@ -37,8 +37,9 @@
     color: var(--text);
     font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
     overflow-x: hidden;
+    font-weight: 400;
   }
 
   /* ─── NOISE OVERLAY ─── */
@@ -269,23 +270,33 @@
     margin-bottom: 2.5rem;
   }
   .hero-desc strong { color: var(--accent); font-weight: 500; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .btn-primary, .btn-secondary, .btn-pdf {
+    flex-shrink: 0;
+  }
   .btn-primary {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     background: #ffffff;
     color: #08080e;
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    padding: 0.9rem 2.1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 100px;
     text-decoration: none;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(255,255,255,0.12);
     transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+    white-space: nowrap;
   }
   .btn-primary:hover {
     background: var(--accent);
@@ -296,17 +307,18 @@
   .btn-secondary {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     background: transparent;
     color: #ddd;
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    padding: 0.9rem 2.1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 100px;
     border: 1px solid rgba(255,255,255,0.15);
     backdrop-filter: blur(8px);
     text-decoration: none;
+    white-space: nowrap;
     transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
   }
   .btn-secondary:hover { border-color: var(--accent2); color: #fff; background: rgba(157,128,255,0.1); transform: translateY(-2px); }
@@ -1031,16 +1043,17 @@
   .btn-pdf {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     background: transparent;
     color: var(--text2);
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    padding: 0.9rem 1.6rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 100px;
     border: 1px solid rgba(255,255,255,0.1);
     text-decoration: none;
+    white-space: nowrap;
     transition: all 0.3s ease;
   }
   .btn-pdf:hover { border-color: var(--accent2); color: var(--accent2); transform: translateY(-2px); }
@@ -1331,11 +1344,11 @@
     .hero-name { font-size: clamp(2.8rem, 11vw, 4rem); }
     .hero-role { font-size: 1.1rem; }
     .hero-desc { font-size: 0.95rem; max-width: 100%; }
-    .hero-actions { flex-direction: column; gap: 0.75rem; }
+    .hero-actions { flex-direction: row; gap: 0.6rem; }
     .btn-primary, .btn-secondary, .btn-pdf {
-      width: 100%;
-      justify-content: center;
-      padding: 1rem 1.5rem;
+      width: auto;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.82rem;
     }
     .now-widget { width: 100%; }
     .hero-badge { font-size: 0.62rem; }
